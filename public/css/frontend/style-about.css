@@ -1,0 +1,222 @@
+.about-page-bg {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/frontend/about/bg3.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.about-bg-content {
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.about-page-bg .about-bg-content h1 {
+    font-size: 65px;
+    text-align: center;
+    color: var(--light-color);
+    text-transform: uppercase;
+    font-family: var(--font-family-title2);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.line div {
+    margin: 0 10px;
+}
+
+.line div:nth-child(1), .line div:nth-child(3) {
+    height: 2px;
+    width: 100px;
+    background: var(--light-color);
+    border-radius: 5px;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+}
+
+.line div:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    background: var(--light-color);
+    border-radius: 50%;
+}
+
+.about-page-bg .about-bg-content p {
+    text-align: center;
+    letter-spacing: 1.5px;
+    font-weight: 300;
+    font-size: 20px;
+    padding-top: 10px;
+    color: var(--light-color);
+    font-family: 'Montserrat', sans-serif;
+    max-width: 700px;
+    line-height: 30px;
+}
+
+.about-page-container {
+    overflow-x: hidden;
+    max-width: 90%;
+    margin: auto;
+}
+
+.about-page-left, .about-page-right {
+    width: 50%;
+}
+  
+.about-page-left .about-img {
+    position: relative;
+}
+  
+.about-page-left .image1 {
+    object-fit: cover;
+    width: 310px;
+    height: 450px;
+}
+  
+.about-page-left .image2 {
+    object-fit: cover;
+    width: 325px;
+    height: 220px;
+    position: absolute;
+    bottom: 5px;
+    z-index: 2;
+    right: 30%;
+}
+
+.about-page-left, .about-page-right {
+    width: 100%;
+}
+
+.about-page-right .about-page-heading {
+    position: relative;
+}
+
+.about-page-right .about-page-heading::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100px;
+    height: 4px;
+    background: #C1B086;
+}
+
+.about-page-right .about-page-heading h5 {
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding-top: 20px;
+    color: #5f5f5f;
+}
+  
+.about-page-right .about-page-heading h2 {
+    font-family: var(--font-family-title2);
+    font-size: 30px;
+    font-weight: 400;
+    margin: 20px 0 40px 0;
+    color: #222222;
+}
+
+.about-page-right .about-page-heading p {
+    text-align: justify;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 25px;
+    color: #5f5f5f;
+    margin: 0 0 20px 50px;
+}
+
+.heading {
+    margin-bottom: -50px;
+}
+
+.heading h1 {
+    font-size: 100px;
+    font-weight: 500;
+    opacity: 0.3;
+    font-family: var(--font-family-title2);
+    position: absolute;
+    top: 5px;
+}
+
+.heading h2 {
+    margin: 40px 0;
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--black-color);
+    opacity: 0.8;
+    font-family: var(--font-family-title2);
+}
+
+.mission-vision {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.mission-vision .heading h1 {
+    position: absolute;
+    top: 0px;
+}
+
+.mission-vision-container {
+    margin: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.mission-vision-container .mission, .mission-vision-container .vision {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    height: 370px;
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: 0.2s ease-in;
+}
+
+.mission-vision-container .mission:hover, .mission-vision-container .vision:hover {
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.mission-content, .vision-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 15px;
+    row-gap: 15px;
+    color: var(--black-color);
+    opacity: 0.7;
+}
+
+.mission-content h1, .vision-content h1 {
+    font-family: var(--font-family-title2);
+    font-size: 40px;
+}
+
+.mission-vision-container i {
+    font-size: 30px;
+}
+  
+.mission-content i {
+    color: red;
+}
+
+.vision-content i {
+    color: #147f9d;
+}
+
+.mission-vision-container p {
+    font-size: 16px;
+    line-height: 30px;
+}
