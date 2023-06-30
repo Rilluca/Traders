@@ -95,7 +95,6 @@
                                     <th style="max-width:70px">Check-in Date</th>
                                     <th style="max-width:70px">Check-out Date</th>
                                     <th>Price</th>
-                                    <th>Ref</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -104,18 +103,39 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Customer</th>
-                                    <th>Room Type.</th>
+                                    <th>Room Type</th>
                                     <th>Room Name</th>
-                                    <th>CheckIn Date</th>
-                                    <th>CheckOut Date</th>
+                                    <th>Check-in Date</th>
+                                    <th>Check-out Date</th>
                                     <th>Price</th>
-                                    <th>Ref</th>
                                     <th>Action</th>
                                 </tr>
                             </tfoot>
 
                             <tbody>
-                                <!--- Booking function --->
+                                @foreach($bookingdata as $booking)
+                                    <tr>
+                                        <td>{{$booking->id}}</td>
+                                        <td>{{$booking->customer->full_name}}</td>
+                                        <td style="max-width:20px;">{{$booking->room->roomtype->type}}</td>
+                                        <td>{{$booking->room->title}}</td>
+                                        <td>{{$booking->checkin_date}}</td>
+                                        <td>{{$booking->checkout_date}}</td>
+                                        <td>
+                                            @if($booking->status==1)
+                                                <a href="{{url('admin/booking/change-status/'.$booking->id)}}" onclick="return confirm('Are you sure to change the booking status?')"class="btn btn-sm btn-danger">Checked In</a>
+                                            @else
+                                                <a href="{{url('admin/booking/change-status/'.$booking->id)}}" onclick="return confirm('Are you sure to change the booking status?')" class="btn btn-sm btn-success">Not Checked In</a>
+                                            @endif
+                                        </td>
+
+                                        <td>
+                                            <a href="{{url('admin/booking/'.$booking->id).'/edit'}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                            <a href="{{url('admin/booking/'.$booking->id)}}" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                                            <a href="{{url('admin/booking/'.$booking->id.'/delete')}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this data?')"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
